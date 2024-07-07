@@ -14,5 +14,26 @@
 def dose(needs):
     #YOUR SOLUTION STARTS HERE
 
-    #YOUR SOLUTION ENDS HERE
+    prescription = []
 
+    if sum(needs) < 500:
+        for n in needs:
+             vitamin = 0
+             injection = 0
+
+             if n > 250:
+                 return "No medicine given"
+             elif n%10 == 0:
+                vitamin = n//10
+                injection = 0
+                prescription.append((vitamin, injection))
+             else:
+                vitamin = n//10 + 1
+                injection = 10 - n%10
+                prescription.append((vitamin, injection))
+
+        return prescription
+    else:
+        return "No medicine given"
+
+    #YOUR SOLUTION ENDS HERE
